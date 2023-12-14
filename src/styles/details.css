@@ -1,0 +1,21 @@
+.note-title {
+	word-wrap: break-word;
+	font-size: 2rem;
+	margin-bottom: 8px;
+}
+
+.details-note > small {
+	opacity: 0.4;
+}
+
+.details-note > p {
+	font-size: 1.25rem;
+	line-height: 1.5;
+	margin-top: 36px;
+}
+
+@media screen and (min-width: 650px) {
+	.note-title {
+		font-size: 3rem;
+	}
+}

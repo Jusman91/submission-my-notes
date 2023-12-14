@@ -1,0 +1,31 @@
+.search {
+	width: 0;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+}
+
+.search.search-active {
+	width: 210px;
+	opacity: 1;
+}
+
+.icon.i-search {
+	font-size: 2.5rem;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.icon.i-search:hover {
+	color: rgb(45, 202, 255);
+}
+
+.btn.btn-circle {
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	transition: all 0.3s linear;
+}
+
+.btn.btn-circle:hover {
+	background: rgba(9, 68, 87, 0.6);
+}
