@@ -1,10 +1,9 @@
-import Typography from '../elements/Typography';
-import '../../styles/footer.css';
-
 const Footer = () => {
 	return (
-		<section className='flex justify-center footer'>
-			<Typography>&copy;2023 My Notes</Typography>
+		<section className='flex items-center justify-center p-4 shadow-footer'>
+			<h6 className='text-xs md:text-sm font-semibold'>
+				&copy;2023 My Notes
+			</h6>
 		</section>
 	);
 };

@@ -1,11 +1,10 @@
 export { default as AddOrRemoveToArchive } from './AddOrRemoveToArchive';
-export { default as CustomButton } from './CustomButton';
+export { default as ButtonWithIcon } from './ButtonWithIcon';
 export { default as DeleteNote } from './DeleteNote';
-export { default as Form } from './Form';
+export { default as FormNote } from './FormNote';
 export { default as GoToEditeNote } from './GoToEditeNote';
 export { default as GoToCreateNote } from './GoToCreateNote';
 export { default as HeaderContent } from './HeaderContent';
 export { default as Logo } from './Logo';
 export { default as NoContent } from './NoContent';
 export { default as SearchInput } from './SearchInput';
-export { default as EditPreview } from './EditPreview';

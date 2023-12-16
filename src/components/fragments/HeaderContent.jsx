@@ -1,13 +1,14 @@
 import SearchInput from './SearchInput';
 import PropTypes from 'prop-types';
-import Typography from '../elements/Typography';
 import GoToCreateNote from './GoToCreateNote';
 
 const HeaderContent = ({ text }) => {
 	return (
-		<div className='flex justify-between mobile-flex'>
-			<Typography className='h3'>{text}</Typography>
-			<div className='flex justify-center'>
+		<div className='flex items-center justify-between mobile-flex'>
+			<h3 className='text-lg md:text-xl font-bold'>
+				{text}
+			</h3>
+			<div className='flex items-center justify-center gap-2'>
 				<SearchInput />
 				<GoToCreateNote />
 			</div>

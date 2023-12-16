@@ -1,16 +1,17 @@
 import PropTypes from 'prop-types';
-import CustomButton from './CustomButton';
 import { MdDelete } from 'react-icons/md';
+import ButtonWithIcon from './ButtonWithIcon';
 
 const DeleteNote = ({ onClick }) => {
 	return (
-		<CustomButton
-			className='btn-circle wrapper'
-			icon={<MdDelete />}
-			anchorSelectTooltip='btn-delete'
-			tooltip='Delete'
-			onClick={onClick}
-		/>
+		<div className='group'>
+			<ButtonWithIcon
+				icon={<MdDelete />}
+				anchorSelectTooltip='btn-delete'
+				tooltip='Delete'
+				onClick={onClick}
+			/>
+		</div>
 	);
 };
 

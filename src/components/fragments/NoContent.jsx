@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
-import Typography from '../elements/Typography';
 
 const NoContent = ({ text }) => {
 	return (
-		<Typography className='no-content'>{text}</Typography>
+		<h4 className='text-center mt-8 opacity-50'>{text}</h4>
 	);
 };
 

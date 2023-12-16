@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types';
+import { twMerge as tm } from 'tailwind-merge';
 
 const Icon = ({ children, className, ...props }) => {
 	return (
 		<div
 			{...props}
-			className={`icon flex justify-center ${className}`}>
+			className={tm(
+				'text-secondary-500 text-2xl flex justify-center',
+				className,
+			)}>
 			{children}
 		</div>
 	);

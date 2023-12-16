@@ -1,18 +1,21 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Typography from '../elements/Typography';
 import { formateDate } from '../../utils/globalService';
-import '../../styles/cards.css';
 
 const CardNotes = ({ data }) => {
 	const { title, body, id } = data || {};
 	const createdAt = formateDate(data?.createdAt);
 
 	return (
-		<Link to={`/notes/${id}`} className='wrapper card'>
-			<Typography className='h4'>{title}</Typography>
-			<small>{createdAt}</small>
-			<p dangerouslySetInnerHTML={{ __html: body }} />
+		<Link
+			to={`/notes/${id}`}
+			className='bg-primary-800 p-4 rounded-xl hover:bg-gradient-radial shadow-wrapper'>
+			<h3 className='text-xl font-semibold'>{title}</h3>
+			<small className='opacity-40'>{createdAt}</small>
+			<p
+				className='line-clamp-6 pt-1'
+				dangerouslySetInnerHTML={{ __html: body }}
+			/>
 		</Link>
 	);
 };

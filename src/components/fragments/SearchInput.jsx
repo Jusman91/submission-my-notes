@@ -1,10 +1,8 @@
 import { CiSearch } from 'react-icons/ci';
-import Icon from '../elements/Icon';
 import Input from '../elements/Input';
 import { useToggle } from '../../hooks/useToggle';
 import { useSearchParams } from 'react-router-dom';
-import '../../styles/elements.css';
-import { Tooltip } from 'react-tooltip';
+import ButtonWithIcon from './ButtonWithIcon';
 
 const SearchInput = () => {
 	const [activeClass, setActiveClass] = useToggle(false);
@@ -13,25 +11,24 @@ const SearchInput = () => {
 	const query = searchParams.get('keyword') || '';
 
 	return (
-		<div className='flex justify-center'>
+		<div className='group flex items-center justify-center cursor-pointer'>
 			<Input
 				type='text'
 				placeholder='Cari judul catatan'
-				className={` search ${
-					activeClass ? 'search-active' : ''
+				className={` w-0 opacity-0 ${
+					activeClass ? 'w-60 opacity-100' : ''
 				}`}
 				onChange={(e) =>
 					setSearchParams({ keyword: e.target.value })
 				}
 				value={query}
 			/>
-			<Icon
-				id='i-search'
-				className='i-search'
-				onClick={setActiveClass}>
-				<CiSearch />
-			</Icon>
-			<Tooltip anchorSelect='#i-search' content='Search' />
+			<ButtonWithIcon
+				icon={<CiSearch />}
+				anchorSelectTooltip='i-search'
+				tooltip='Search'
+				onClick={setActiveClass}
+			/>
 		</div>
 	);
 };

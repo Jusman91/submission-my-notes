@@ -1,18 +1,16 @@
 import { useState } from 'react';
-import { EditPreview, Form } from '../components/fragments';
+import { FormNote } from '../components/fragments';
 import {
 	useHref,
 	useNavigate,
 	useParams,
 } from 'react-router-dom';
-import Typography from '../components/elements/Typography';
 import {
 	handleChange,
 	handleChangeBody,
 	handleSubmit,
 	useNoteEffect,
 } from '../utils/noteHandler';
-import '../styles/node.css';
 
 const Note = () => {
 	const { id } = useParams();
@@ -27,31 +25,23 @@ const Note = () => {
 	useNoteEffect({ id, navigate, setFormData });
 
 	return (
-		<section className='container container-create-note'>
-			<Typography className='h1 title-content'>
+		<section className='max-w-3xl mx-auto'>
+			<h1 className='text-xl md:text-2xl text-center font-semibold capitalize py-2'>
 				{titleContent} note
-			</Typography>
-			<div className='flex container-form'>
-				<Form
-					titleCharacterCount={formData.title.length}
-					onChange={(e) =>
-						handleChange({ e, formData, setFormData })
-					}
-					onInput={(e) =>
-						handleChangeBody({ e, formData, setFormData })
-					}
-					formValue={formData}
-					onSubmit={(e) =>
-						handleSubmit({ e, formData, id, navigate })
-					}
-				/>
-				{id && (
-					<EditPreview
-						title={formData.title}
-						body={formData.body}
-					/>
-				)}
-			</div>
+			</h1>
+			<FormNote
+				titleCharacterCount={formData.title.length}
+				onChange={(e) =>
+					handleChange({ e, formData, setFormData })
+				}
+				onInput={(e) =>
+					handleChangeBody({ e, formData, setFormData })
+				}
+				formValue={formData}
+				onSubmit={(e) =>
+					handleSubmit({ e, formData, id, navigate })
+				}
+			/>
 		</section>
 	);
 };

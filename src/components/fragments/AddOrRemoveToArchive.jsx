@@ -3,23 +3,24 @@ import {
 	MdOutlineArchive,
 	MdOutlineUnarchive,
 } from 'react-icons/md';
-import CustomButton from './CustomButton';
+import ButtonWithIcon from './ButtonWithIcon';
 
 const AddOrRemoveToArchive = ({ onClick, archived }) => {
 	return (
-		<CustomButton
-			className='btn-circle wrapper'
-			icon={
-				archived ? (
-					<MdOutlineUnarchive />
-				) : (
-					<MdOutlineArchive />
-				)
-			}
-			anchorSelectTooltip='btn-add-or-remove-to-archive'
-			tooltip={archived ? 'UnArchive' : 'Archive'}
-			onClick={onClick}
-		/>
+		<div className='group'>
+			<ButtonWithIcon
+				icon={
+					archived ? (
+						<MdOutlineUnarchive />
+					) : (
+						<MdOutlineArchive />
+					)
+				}
+				anchorSelectTooltip='btn-add-or-remove-to-archive'
+				tooltip={archived ? 'UnArchive' : 'Archive'}
+				onClick={onClick}
+			/>
+		</div>
 	);
 };
 

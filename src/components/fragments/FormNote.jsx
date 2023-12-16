@@ -1,11 +1,9 @@
 import PropTypes from 'prop-types';
 import Input from '../elements/Input';
-import LimitCharTitle from '../elements/LimitCharTitle';
 import Button from '../elements/Button';
-import '../../styles/form.css';
 import { useParams } from 'react-router-dom';
 
-const Form = ({
+const FormNote = ({
 	titleCharacterCount,
 	formValue,
 	onChange,
@@ -18,10 +16,10 @@ const Form = ({
 		<form
 			onSubmit={onSubmit}
 			action=''
-			className='wrapper-form'>
-			<div className='wrapper-input'>
+			className='w-full flex flex-col gap-4'>
+			<div className='relative'>
 				<Input
-					className='input-title'
+					className='w-full p-2'
 					type='text'
 					placeholder='Judul...'
 					id='title'
@@ -29,26 +27,26 @@ const Form = ({
 					value={formValue.title}
 					onChange={onChange}
 				/>
-				<LimitCharTitle
-					titleCharacterCount={titleCharacterCount}
-				/>
+				<small className='absolute bottom-1 right-1 opacity-40 text-xs'>
+					Sisa karakter {50 - titleCharacterCount}
+				</small>
 			</div>
 			<div
-				className='note-body'
-				data-placeholder='Sebenarnya saya adalah ....'
+				className={`empty:before:content-[attr(placeholder)] text-sm md:text-base before:text-gray-400 border border-primary-500 focus:border-secondary-700 outline-none rounded-2xl w-full min-h-[350px] p-2 duration-300`}
+				placeholder='Sebenarnya saya adalah ....'
 				contentEditable
 				onInput={onInput}
 			/>
 			<Button
 				type='submit'
-				className='btn-submit bg-gradient'>
+				className='text-sm md:text-base font-semibold bg-gradient-radial hover:shadow-wrapper duration-500'>
 				{`${id ? 'Edit' : 'Tambah'} catatan`}
 			</Button>
 		</form>
 	);
 };
 
-Form.propTypes = {
+FormNote.propTypes = {
 	titleCharacterCount: PropTypes.number.isRequired,
 	formValue: PropTypes.shape({
 		title: PropTypes.string.isRequired,
@@ -59,4 +57,4 @@ Form.propTypes = {
 	onSubmit: PropTypes.func.isRequired,
 };
 
-export default Form;
+export default FormNote;

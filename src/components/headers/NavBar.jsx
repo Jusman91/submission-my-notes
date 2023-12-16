@@ -1,10 +1,9 @@
 import { Logo } from '../fragments';
 import ListsNav from './ListsNav';
-import '../../styles/headers.css';
 
 const NavBar = () => {
 	return (
-		<header className='flex justify-between headers'>
+		<header className='flex items-center justify-between p-2 shadow-header'>
 			<Logo />
 			<ListsNav />
 		</header>

@@ -1,5 +1,4 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import Typography from '../components/elements/Typography';
 import { getNote } from '../utils/noteService';
 import { formateDate } from '../utils/globalService';
 import {
@@ -11,7 +10,6 @@ import {
 	DeleteNote,
 	GoToEditeNote,
 } from '../components/fragments';
-import '../styles/details.css';
 
 const DetailsNote = () => {
 	const { id } = useParams();
@@ -21,11 +19,11 @@ const DetailsNote = () => {
 	const createdAt = formateDate(note.createdAt);
 
 	return (
-		<section className='container-section'>
-			<div className='flex justify-center wrapper-title'>
-				<Typography className='note-title'>
+		<section className='mt-8'>
+			<div className='flex items-center justify-center gap-2'>
+				<h1 className='text-3xl lg:text-5xl font-bold'>
 					{title}
-				</Typography>
+				</h1>
 				<AddOrRemoveToArchive
 					archived={archived}
 					onClick={() =>
@@ -37,8 +35,11 @@ const DetailsNote = () => {
 					onClick={() => handleDelete({ id, navigate })}
 				/>
 			</div>
-			<small>{createdAt}</small>
-			<p dangerouslySetInnerHTML={{ __html: body }} />
+			<small className='opacity-40'>{createdAt}</small>
+			<p
+				className='mt-4'
+				dangerouslySetInnerHTML={{ __html: body }}
+			/>
 		</section>
 	);
 };

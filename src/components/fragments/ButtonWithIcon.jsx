@@ -2,27 +2,19 @@ import PropTypes from 'prop-types';
 import Button from '../elements/Button';
 import Icon from '../elements/Icon';
 import { Tooltip } from 'react-tooltip';
-import Typography from '../elements/Typography';
 
-const CustomButton = ({
+const ButtonWithIcon = ({
 	anchorSelectTooltip,
-	className,
 	onClick,
 	icon,
-	typography,
 	tooltip,
 }) => {
 	return (
 		<Button
 			id={anchorSelectTooltip}
-			className={className}
+			className='rounded-full w-8 h-8 shadow-wrapper group-hover:animate-bounce'
 			onClick={onClick}>
-			{icon && <Icon>{icon}</Icon>}
-			{typography && (
-				<Typography className='h6 text-gradient'>
-					{typography}
-				</Typography>
-			)}
+			<Icon className='text-base md:text-lg'>{icon}</Icon>
 			{tooltip && (
 				<Tooltip
 					anchorSelect={`#${anchorSelectTooltip}`}
@@ -33,16 +25,14 @@ const CustomButton = ({
 	);
 };
 
-CustomButton.propTypes = {
-	className: PropTypes.string,
+ButtonWithIcon.propTypes = {
 	anchorSelectTooltip: PropTypes.string,
 	onClick: PropTypes.func,
 	icon: PropTypes.oneOfType([
 		PropTypes.string,
 		PropTypes.element,
-	]),
-	typography: PropTypes.string,
+	]).isRequired,
 	tooltip: PropTypes.string,
 };
 
-export default CustomButton;
+export default ButtonWithIcon;

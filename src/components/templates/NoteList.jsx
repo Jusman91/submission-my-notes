@@ -16,7 +16,7 @@ const NoteList = ({ text, notes }) => {
 		<section>
 			<HeaderContent text={text} />
 			{filteredNotes?.length > 0 ? (
-				<div className='list_notes'>
+				<div className='grid grid-cols-1 gap-4 py-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
 					{filteredNotes?.map((note) => (
 						<CardNotes key={note.id} data={note} />
 					))}
