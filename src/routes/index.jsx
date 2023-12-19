@@ -1,17 +1,37 @@
 import { useRoutes } from 'react-router-dom';
-import { LayoutNotes, LayoutRoot } from '../layouts';
+import {
+	LayoutAuth,
+	LayoutNotes,
+	LayoutRoot,
+} from '../layouts';
 import {
 	ArchivedNotes,
 	DetailsNote,
 	Home,
+	Login,
 	NotFound404,
 	Note,
 	Notes,
+	Register,
 } from '../pages';
 import { NoContent } from '../components/fragments';
 
 const Routes = () => {
 	const element = useRoutes([
+		{
+			path: 'auth',
+			element: <LayoutAuth />,
+			children: [
+				{
+					path: 'register',
+					element: <Register />,
+				},
+				{
+					path: 'login',
+					element: <Login />,
+				},
+			],
+		},
 		{
 			path: '',
 			element: <LayoutRoot />,

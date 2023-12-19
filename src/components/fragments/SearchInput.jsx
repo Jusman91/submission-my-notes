@@ -13,9 +13,10 @@ const SearchInput = () => {
 	return (
 		<div className='group flex items-center justify-center cursor-pointer'>
 			<Input
+				variant='default'
 				type='text'
 				placeholder='Cari judul catatan'
-				className={` w-0 opacity-0 ${
+				className={`w-0 opacity-0 ${
 					activeClass ? 'w-60 opacity-100' : ''
 				}`}
 				onChange={(e) =>

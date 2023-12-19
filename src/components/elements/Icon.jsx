@@ -1,13 +1,34 @@
 import PropTypes from 'prop-types';
-import { twMerge as tm } from 'tailwind-merge';
+import { cn } from '../../utils/globalService';
+import { cva } from 'class-variance-authority';
 
-const Icon = ({ children, className, ...props }) => {
+const Icon = ({
+	children,
+	className,
+	validation,
+	...props
+}) => {
+	const iconVariants = cva(
+		'text-secondary-700 text-2xl flex items-center justify-center',
+		{
+			variants: {
+				validation: {
+					default:
+						'text-secondary-700 text-2xl flex items-center justify-center',
+					success: 'text-green-700',
+					error: 'text-red-700',
+				},
+			},
+			defaultVariants: {
+				validation: 'default',
+			},
+		},
+	);
 	return (
 		<div
 			{...props}
-			className={tm(
-				'text-secondary-500 text-2xl flex justify-center',
-				className,
+			className={cn(
+				iconVariants({ validation, className }),
 			)}>
 			{children}
 		</div>
@@ -17,6 +38,11 @@ const Icon = ({ children, className, ...props }) => {
 Icon.propTypes = {
 	children: PropTypes.node.isRequired,
 	className: PropTypes.string,
+	validation: PropTypes.oneOf([
+		'default',
+		'success',
+		'error',
+	]),
 };
 
 export default Icon;

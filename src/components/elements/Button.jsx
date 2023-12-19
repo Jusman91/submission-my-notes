@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import { twMerge as tm } from 'tailwind-merge';
+import { cn } from '../../utils/globalService';
 
 const Button = ({ children, className, ...props }) => {
 	return (
 		<button
 			{...props}
-			className={tm(
-				'flex items-center justify-center py-2 px-4 outline-none border-none cursor-pointer rounded-xl',
+			className={cn(
+				'flex items-center justify-center py-2 px-4 font-semibold outline-none border-none cursor-pointer rounded-xl bg-primary-500 hover:bg-primary-400 duration-300',
 				className,
 			)}>
 			{children}
