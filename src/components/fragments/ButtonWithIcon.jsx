@@ -17,6 +17,7 @@ const ButtonWithIcon = ({
 			<Icon className='text-base md:text-lg'>{icon}</Icon>
 			{tooltip && (
 				<Tooltip
+					style={{ fontSize: '11px' }}
 					anchorSelect={`#${anchorSelectTooltip}`}
 					content={tooltip}
 				/>

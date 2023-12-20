@@ -8,14 +8,20 @@ const AuthButtonForm = ({ login, isSubmitting }) => {
 			disabled={isSubmitting}
 			className='rounded-3xl'
 			type='submit'>
-			{login ? 'Login' : 'Register'}
 			{isSubmitting ? (
-				<ClipLoader
-					color='#fff'
-					loading={isSubmitting && isSubmitting}
-					size={20}
-				/>
-			) : null}
+				<>
+					<ClipLoader
+						color='#fff'
+						loading={isSubmitting && isSubmitting}
+						size={20}
+					/>
+					Loading...
+				</>
+			) : login ? (
+				'Login'
+			) : (
+				'Register'
+			)}
 		</Button>
 	);
 };

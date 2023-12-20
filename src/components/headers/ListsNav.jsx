@@ -1,6 +1,7 @@
 import { dataListNav } from '../../static/dataListNav';
 import { NavLink } from 'react-router-dom';
 import Icon from '../elements/Icon';
+import UserMenu from '../user/UserMenu';
 
 const ListsNav = () => {
 	return (
@@ -23,6 +24,7 @@ const ListsNav = () => {
 					)}
 				</NavLink>
 			))}
+			<UserMenu />
 		</div>
 	);
 };

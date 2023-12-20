@@ -1,4 +1,3 @@
-export const PENDING = 'PENDING';
-export const FULFILLED = 'FULFILLED';
-export const REJECTED = 'REJECTED';
-export const LOGOUT = 'FULFILLED';
+export const PENDING_USER = 'PENDING_USER';
+export const FULFILLED_USER = 'FULFILLED_USER';
+export const REJECTED_USER = 'REJECTED_USER';

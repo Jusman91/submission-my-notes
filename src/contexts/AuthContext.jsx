@@ -1,4 +1,4 @@
-import { createContext, useReducer } from 'react';
+import { createContext, useMemo, useReducer } from 'react';
 import { AuthReducer } from './reducer/authReducer';
 import PropTypes from 'prop-types';
 import { getUser } from '../utils/service/authService';
@@ -16,14 +16,17 @@ const AuthContextProvider = ({ children }) => {
 		INITIAL_STATE,
 	);
 
+	const value = useMemo(() => {
+		return {
+			user: getUser(),
+			loading: state.loading,
+			error: state.error,
+			dispatch,
+		};
+	}, [state.error, state.loading]);
+
 	return (
-		<AuthContext.Provider
-			value={{
-				user: getUser(),
-				loading: state.loading,
-				error: state.error,
-				dispatch,
-			}}>
+		<AuthContext.Provider value={value}>
 			{children}
 		</AuthContext.Provider>
 	);

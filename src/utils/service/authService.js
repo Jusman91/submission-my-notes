@@ -1,9 +1,9 @@
 import { toast } from 'react-toastify';
 import API from '../../api/axiosInstance';
 import {
-	FULFILLED,
-	PENDING,
-	REJECTED,
+	FULFILLED_USER,
+	PENDING_USER,
+	REJECTED_USER,
 } from '../../static/actionTypes';
 
 export function getAccessToken() {
@@ -57,19 +57,26 @@ export async function getLoggedUser({
 	dispatch,
 	navigate,
 }) {
-	dispatch({ type: PENDING });
+	dispatch({ type: PENDING_USER });
 	try {
 		await getToken(credentials);
 		const { data } = await API.get('users/me');
 		const user = data.data;
 		putUser(user);
-		dispatch({ type: FULFILLED });
+		dispatch({ type: FULFILLED_USER });
 		navigate('/');
 	} catch (error) {
 		dispatch({
-			type: REJECTED,
+			type: REJECTED_USER,
 			payload: error.response.data.message,
 		});
 		throw error;
 	}
+}
+
+export function handleLogout({ navigate }) {
+	localStorage.removeItem('user');
+	localStorage.removeItem('accessToken');
+	navigate('/auth/login');
+	toast.success('Logout successful');
 }

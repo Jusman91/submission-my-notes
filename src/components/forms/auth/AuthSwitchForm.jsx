@@ -11,7 +11,7 @@ const AuthSwitchForm = ({ login }) => {
 			</small>
 			<Link
 				to={login ? '/auth/register' : '/auth/login'}
-				className='text-xs font-semibold hover:text-secondary-600 duration-300'>
+				className='text-sm text-primary-500 font-semibold hover:text-secondary-600 duration-300'>
 				{login ? 'Register' : 'Login'}
 			</Link>
 		</div>

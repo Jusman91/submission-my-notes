@@ -1,34 +1,27 @@
 import {
-	FULFILLED,
-	LOGOUT,
-	PENDING,
-	REJECTED,
+	FULFILLED_USER,
+	PENDING_USER,
+	REJECTED_USER,
 } from '../../static/actionTypes';
 
 export const AuthReducer = (state, action) => {
 	switch (action.type) {
-		case PENDING:
+		case PENDING_USER:
 			return {
 				...state,
 				loading: true,
 			};
-		case FULFILLED: {
+		case FULFILLED_USER: {
 			return {
 				...state,
 				loading: false,
 			};
 		}
-		case REJECTED:
+		case REJECTED_USER:
 			return {
 				...state,
 				loading: false,
 				error: action.payload,
-			};
-		case LOGOUT:
-			return {
-				...state,
-				loading: false,
-				error: null,
 			};
 		default:
 			return state;
