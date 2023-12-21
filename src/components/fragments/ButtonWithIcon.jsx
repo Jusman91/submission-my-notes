@@ -10,19 +10,24 @@ const ButtonWithIcon = ({
 	tooltip,
 }) => {
 	return (
-		<Button
-			id={anchorSelectTooltip}
-			className='rounded-full w-8 h-8 shadow-wrapper group-hover:animate-bounce'
-			onClick={onClick}>
-			<Icon className='text-base md:text-lg'>{icon}</Icon>
-			{tooltip && (
-				<Tooltip
-					style={{ fontSize: '11px' }}
-					anchorSelect={`#${anchorSelectTooltip}`}
-					content={tooltip}
-				/>
-			)}
-		</Button>
+		<div className='group'>
+			<Button
+				id={anchorSelectTooltip}
+				className='rounded-full w-8 h-8 shadow-wrapper group-hover:animate-bounce'
+				onClick={onClick}>
+				<Icon className='text-base md:text-lg'>{icon}</Icon>
+				{tooltip && (
+					<Tooltip
+						style={{
+							fontSize: '11px',
+							padding: '5px 10px',
+						}}
+						anchorSelect={`#${anchorSelectTooltip}`}
+						content={tooltip}
+					/>
+				)}
+			</Button>
+		</div>
 	);
 };
 

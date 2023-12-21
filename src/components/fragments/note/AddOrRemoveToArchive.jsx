@@ -3,7 +3,7 @@ import {
 	MdOutlineArchive,
 	MdOutlineUnarchive,
 } from 'react-icons/md';
-import ButtonWithIcon from './ButtonWithIcon';
+import ButtonWithIcon from '../ButtonWithIcon';
 
 const AddOrRemoveToArchive = ({ onClick, archived }) => {
 	return (
@@ -26,7 +26,7 @@ const AddOrRemoveToArchive = ({ onClick, archived }) => {
 
 AddOrRemoveToArchive.propTypes = {
 	onClick: PropTypes.func.isRequired,
-	archived: PropTypes.bool.isRequired,
+	archived: PropTypes.bool,
 };
 
 export default AddOrRemoveToArchive;

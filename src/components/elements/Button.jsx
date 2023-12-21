@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { cn } from '../../utils/globalService';
+import { cn } from '../../utils/service/globalService';
 
 const Button = ({ children, className, ...props }) => {
 	return (

@@ -12,3 +12,54 @@
 		@apply bg-gradient-to-r from-[#207fa8] via-[#fdffb8] to-[#3bd19f] bg-clip-text text-transparent;
 	}
 }
+
+.ql-container {
+	border: none !important;
+}
+.ql-toolbar.ql-snow {
+	border: 1px solid #062e3d !important;
+	border-bottom: none !important;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.ql-editor {
+	border: 1px solid #062e3d;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.ql-editor.borderNone {
+	border: none;
+}
+
+.ql-editor h1 {
+	font-size: clamp(20px, 3vw, 48px);
+}
+
+.ql-editor h2 {
+	font-size: clamp(18px, 2.8vw, 40px);
+}
+
+.ql-editor h3 {
+	font-size: clamp(16px, 2.6vw, 36px);
+}
+
+.ql-editor h4 {
+	font-size: clamp(14px, 2.4vw, 32px);
+}
+
+.ql-editor h5 {
+	font-size: clamp(12px, 2.2vw, 28px);
+}
+
+.ql-editor h6 {
+	font-size: clamp(10px, 2vw, 24px);
+}
+
+.ql-editor p {
+	font-size: clamp(14px, 1.8vw, 24px);
+}
+
+.ql-editor span {
+	font-size: clamp(14px, 1.6vw, 20px);
+}

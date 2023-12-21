@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MdOutlineNoteAdd } from 'react-icons/md';
-import ButtonWithIcon from './ButtonWithIcon';
+import ButtonWithIcon from '../ButtonWithIcon';
 
 const GoToCreateNote = () => {
 	return (

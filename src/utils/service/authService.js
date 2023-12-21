@@ -74,6 +74,32 @@ export async function getLoggedUser({
 	}
 }
 
+export const handleSubmit = ({
+	values,
+	setSubmitting,
+	login,
+	dispatch,
+	navigate,
+}) => {
+	if (login) {
+		getLoggedUser({
+			credentials: values,
+			dispatch,
+			navigate,
+		});
+	} else {
+		register(
+			{
+				name: values.name,
+				email: values.email,
+				password: values.password,
+			},
+			navigate,
+		);
+	}
+	setSubmitting(false);
+};
+
 export function handleLogout({ navigate }) {
 	localStorage.removeItem('user');
 	localStorage.removeItem('accessToken');

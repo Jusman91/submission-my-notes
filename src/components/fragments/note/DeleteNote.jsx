@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { MdDelete } from 'react-icons/md';
-import ButtonWithIcon from './ButtonWithIcon';
+import ButtonWithIcon from '../ButtonWithIcon';
 
 const DeleteNote = ({ onClick }) => {
 	return (

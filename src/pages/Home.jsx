@@ -1,10 +1,6 @@
-import ActiveNotes from './ActiveNotes';
-import { useAuthContext } from '../hooks/useAuthContext';
+import ActiveNotes from './note/ActiveNotes';
 
 const Home = () => {
-	const { user } = useAuthContext();
-	console.log('user', user);
-
 	return <ActiveNotes />;
 };
 

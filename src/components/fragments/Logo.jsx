@@ -11,7 +11,7 @@ const Logo = () => {
 				alt='Logo'
 				className='w-8 h-8 md:w-16 md:h-16 object-cover'
 			/>
-			<h1 className='text-lg md:text-3xl text-gradient font-bold'>
+			<h1 className='text-base md:text-3xl text-gradient font-bold'>
 				My Notes
 			</h1>
 		</Link>

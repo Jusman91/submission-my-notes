@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { cn } from '../../utils/globalService';
+import { cn } from '../../utils/service/globalService';
 import { cva } from 'class-variance-authority';
 
 const Label = ({

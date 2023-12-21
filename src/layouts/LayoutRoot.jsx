@@ -1,8 +1,13 @@
-import { Outlet } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import NavBar from '../components/headers/NavBar';
 import Footer from '../components/footer/Footer';
+import { useAuthContext } from '../hooks/useAuthContext';
 
 const LayoutRoot = () => {
+	const { user } = useAuthContext();
+
+	if (!user) return <Navigate to='/auth/login' />;
+
 	return (
 		<>
 			<NavBar />

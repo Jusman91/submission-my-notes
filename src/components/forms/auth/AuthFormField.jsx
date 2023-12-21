@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
-import AuthFieldElement from './AuthFieldElement';
 import {
 	MdLock,
 	MdOutlineMailOutline,
 	MdPerson,
 } from 'react-icons/md';
+import AuthFieldFragment from './AuthFieldFragment';
 
-const AuthFieldForm = ({ login }) => {
+const AuthFormField = ({ login }) => {
 	return (
 		<>
 			{!login && (
-				<AuthFieldElement
+				<AuthFieldFragment
 					type='text'
 					id='name'
 					name='name'
@@ -18,14 +18,14 @@ const AuthFieldForm = ({ login }) => {
 					icon={<MdPerson />}
 				/>
 			)}
-			<AuthFieldElement
+			<AuthFieldFragment
 				type='email'
 				id='email'
 				name='email'
 				label='Email'
 				icon={<MdOutlineMailOutline />}
 			/>
-			<AuthFieldElement
+			<AuthFieldFragment
 				type='password'
 				id='password'
 				name='password'
@@ -33,7 +33,7 @@ const AuthFieldForm = ({ login }) => {
 				icon={<MdLock />}
 			/>
 			{!login && (
-				<AuthFieldElement
+				<AuthFieldFragment
 					type='password'
 					id='confirmPassword'
 					name='confirmPassword'
@@ -45,8 +45,8 @@ const AuthFieldForm = ({ login }) => {
 	);
 };
 
-AuthFieldForm.propTypes = {
+AuthFormField.propTypes = {
 	login: PropTypes.bool,
 };
 
-export default AuthFieldForm;
+export default AuthFormField;

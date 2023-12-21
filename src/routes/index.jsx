@@ -11,10 +11,8 @@ import {
 	Login,
 	NotFound404,
 	Note,
-	Notes,
 	Register,
 } from '../pages';
-import { NoContent } from '../components/fragments';
 
 const Routes = () => {
 	const element = useRoutes([
@@ -45,15 +43,7 @@ const Routes = () => {
 					element: <LayoutNotes />,
 					children: [
 						{
-							path: '',
-							element: <Notes />,
-						},
-						{
 							path: 'new',
-							element: <Note />,
-						},
-						{
-							path: ':id/edit',
 							element: <Note />,
 						},
 						{
@@ -63,12 +53,6 @@ const Routes = () => {
 						{
 							path: 'archives',
 							element: <ArchivedNotes />,
-						},
-						{
-							path: 'no-content',
-							element: (
-								<NoContent text='Catatan tidak ditemukan' />
-							),
 						},
 					],
 				},

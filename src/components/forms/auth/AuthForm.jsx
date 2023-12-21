@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 import { Form, Formik } from 'formik';
-import AuthHeaderForm from './AuthHeaderForm';
-import AuthFieldForm from './AuthFieldForm';
-import AuthButtonForm from './AuthButtonForm';
-import AuthSwitchForm from './AuthSwitchForm';
+import AuthFormButton from './AuthFormButton';
+import AuthFormHeader from './AuthFormHeader';
+import AuthFormField from './AuthFormField';
+import AuthFormSwitch from './AuthFormSwitch';
 import {
 	getInitialValues,
 	getValidationSchema,
-} from './authValidationForm';
+} from '../../../validations/authFormValidation';
 import { useNavigate } from 'react-router-dom';
-import { handleSubmit } from './authHandleSubmitForm';
 import { useAuthContext } from '../../../hooks/useAuthContext';
+import { handleSubmit } from '../../../utils/service/authService';
 
 const AuthForm = ({ login }) => {
 	const navigate = useNavigate();
@@ -31,13 +31,13 @@ const AuthForm = ({ login }) => {
 			}>
 			{({ isSubmitting }) => (
 				<Form className='md:w-80 flex flex-col border-8 border-primary-800 shadow-form p-5 rounded-[20px]'>
-					<AuthHeaderForm login={login} />
-					<AuthFieldForm login={login} />
-					<AuthButtonForm
+					<AuthFormHeader login={login} />
+					<AuthFormField login={login} />
+					<AuthFormButton
 						login={login}
 						isSubmitting={isSubmitting}
 					/>
-					<AuthSwitchForm login={login} />
+					<AuthFormSwitch login={login} />
 				</Form>
 			)}
 		</Formik>

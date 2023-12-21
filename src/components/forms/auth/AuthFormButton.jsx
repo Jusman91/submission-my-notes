@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
-import { Button } from '../../elements';
-import { ClipLoader } from 'react-spinners';
+import { Button, Loading } from '../../elements';
 
-const AuthButtonForm = ({ login, isSubmitting }) => {
+const AuthFormButton = ({ login, isSubmitting }) => {
 	return (
 		<Button
 			disabled={isSubmitting}
@@ -10,11 +9,7 @@ const AuthButtonForm = ({ login, isSubmitting }) => {
 			type='submit'>
 			{isSubmitting ? (
 				<>
-					<ClipLoader
-						color='#fff'
-						loading={isSubmitting && isSubmitting}
-						size={20}
-					/>
+					<Loading loading={isSubmitting} size={20} />
 					Loading...
 				</>
 			) : login ? (
@@ -26,9 +21,9 @@ const AuthButtonForm = ({ login, isSubmitting }) => {
 	);
 };
 
-AuthButtonForm.propTypes = {
+AuthFormButton.propTypes = {
 	login: PropTypes.bool,
 	isSubmitting: PropTypes.bool,
 };
 
-export default AuthButtonForm;
+export default AuthFormButton;

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { cva } from 'class-variance-authority';
-import { cn } from '../../utils/globalService';
+import { cn } from '../../utils/service/globalService';
 
 const Input = ({ className, validation, ...props }) => {
 	const inputVariants = cva(

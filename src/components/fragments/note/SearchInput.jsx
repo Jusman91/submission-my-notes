@@ -1,8 +1,8 @@
 import { CiSearch } from 'react-icons/ci';
-import Input from '../elements/Input';
-import { useToggle } from '../../hooks/useToggle';
+import Input from '../../elements/Input';
 import { useSearchParams } from 'react-router-dom';
-import ButtonWithIcon from './ButtonWithIcon';
+import ButtonWithIcon from '../ButtonWithIcon';
+import { useToggle } from '../../../hooks/useToggle';
 
 const SearchInput = () => {
 	const [activeClass, setActiveClass] = useToggle(false);

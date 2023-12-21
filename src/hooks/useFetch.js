@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import API from '../api/axiosInstance';
 
-const useFetchNote = (url) => {
+const useFetch = (url) => {
 	const [data, setData] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
@@ -13,7 +13,7 @@ const useFetchNote = (url) => {
 			setLoading(true);
 			try {
 				const { data } = await API.get(url);
-				setData(data);
+				setData(data.data);
 				setError(null);
 			} catch (err) {
 				if (isMounted) {
@@ -36,7 +36,7 @@ const useFetchNote = (url) => {
 		setLoading(true);
 		try {
 			const { data } = await API.get(url);
-			setData(data);
+			setData(data.data);
 			setError(null);
 		} catch (err) {
 			setError(err);
@@ -47,4 +47,4 @@ const useFetchNote = (url) => {
 	return { data, loading, error, reFetch };
 };
 
-export default useFetchNote;
+export default useFetch;

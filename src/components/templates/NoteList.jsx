@@ -3,21 +3,21 @@ import { HeaderContent } from '../fragments';
 import CardNotes from '../card/CardNotes';
 import NoContent from '../fragments/NoContent';
 import { useSearchParams } from 'react-router-dom';
+import { filteredData } from '../../utils/service/globalService';
 import useDebounce from '../../hooks/useDebounce';
-import { filteredData } from '../../utils/globalService';
 
 const NoteList = ({ text, notes }) => {
 	const [searchParams] = useSearchParams();
 	const query = searchParams.get('keyword') || '';
 	const debounceQuery = useDebounce(query, 500);
-	const filteredNotes = filteredData(notes, debounceQuery);
+	const filterNotes = filteredData(notes, debounceQuery);
 
 	return (
 		<section>
 			<HeaderContent text={text} />
-			{filteredNotes?.length > 0 ? (
+			{filterNotes?.length > 0 ? (
 				<div className='grid grid-cols-1 gap-4 py-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-					{filteredNotes?.map((note) => (
+					{filterNotes?.map((note) => (
 						<CardNotes key={note.id} data={note} />
 					))}
 				</div>
