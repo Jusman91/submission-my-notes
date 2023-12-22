@@ -5,11 +5,29 @@
 @tailwind utilities;
 
 @layer base {
+	:root {
+		--color-bkg1: 210deg 40% 98%;
+		--color-content: 196deg 85% 3%;
+		--color-primary1: 196deg 28% 31%;
+		--color-primary2: 196 82% 13%;
+		--color-secondary1: 183deg 48% 61%;
+		--color-secondary2: 183deg 31% 46%;
+	}
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--color-bkg1: 196deg 85% 3%;
+			--color-content: 210deg 40% 98%;
+		}
+	}
+	:root[data-theme='dark'] {
+		--color-bkg1: 196deg 85% 3%;
+		--color-content: 210deg 40% 98%;
+	}
 	body {
-		@apply min-h-screen overflow-x-hidden font-poppins bg-primary-900 text-white;
+		@apply min-h-screen overflow-x-hidden font-poppins bg-bkg-1 text-content;
 	}
 	.text-gradient {
-		@apply bg-gradient-to-r from-[#207fa8] via-[#fdffb8] to-[#3bd19f] bg-clip-text text-transparent;
+		@apply bg-gradient-to-r from-[#207fa8] via-[#d7d96c] to-[#3bd19f] bg-clip-text text-transparent;
 	}
 }
 
@@ -17,13 +35,13 @@
 	border: none !important;
 }
 .ql-toolbar.ql-snow {
-	border: 1px solid #062e3d !important;
+	border: 1px solid #062e3c !important;
 	border-bottom: none !important;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
 .ql-editor {
-	border: 1px solid #062e3d;
+	border: 1px solid #062e3c;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 }

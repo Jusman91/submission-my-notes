@@ -9,12 +9,12 @@ const Icon = ({
 	...props
 }) => {
 	const iconVariants = cva(
-		'text-secondary-700 text-2xl flex items-center justify-center',
+		'text-secondary-2 text-2xl flex items-center justify-center',
 		{
 			variants: {
 				validation: {
 					default:
-						'text-secondary-700 text-2xl flex items-center justify-center',
+						'text-secondary-2 text-2xl flex items-center justify-center',
 					success: 'text-green-700',
 					error: 'text-red-700',
 				},

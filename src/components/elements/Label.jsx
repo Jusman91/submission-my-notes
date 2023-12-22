@@ -14,7 +14,7 @@ const Label = ({
 			variants: {
 				validation: {
 					default:
-						'peer-focus:text-secondary-700 peer-focus:border peer-focus:border-secondary-700 peer-valid:text-secondary-700 peer-valid:border-secondary-700',
+						'peer-focus:text-secondary-2 peer-focus:border peer-focus:border-secondary-2 peer-valid:text-secondary-2 peer-valid:border-secondary-2',
 					success:
 						'peer-focus:text-green-500 peer-focus:border peer-focus:border-green-500 peer-valid:text-green-500 peer-valid:border-green-500',
 					error:

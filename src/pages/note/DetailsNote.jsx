@@ -11,6 +11,7 @@ import {
 import { Loading } from '../../components/elements';
 import NotFound404 from '../NotFound404';
 import useFetch from '../../hooks/useFetch';
+import { useLanguageContext } from '../../hooks/useContext';
 
 const DetailsNote = () => {
 	const { id } = useParams();
@@ -22,6 +23,7 @@ const DetailsNote = () => {
 		error,
 	} = useFetch(`/notes/${id}`);
 	const { title, body, archived, createdAt } = note ?? {};
+	const { language } = useLanguageContext();
 
 	if (error) {
 		return <NotFound404 />;
@@ -52,7 +54,7 @@ const DetailsNote = () => {
 						/>
 					</div>
 					<small className='opacity-40'>
-						{formateDate(createdAt)}
+						{formateDate(createdAt, language)}
 					</small>
 					<p
 						className='mt-4 ql-editor borderNone'

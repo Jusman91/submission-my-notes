@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useAuthContext } from '../../hooks/useAuthContext';
+import { useAuthContext } from '../../hooks/useContext';
 import ProfilePic from './ProfilePic';
 import UserInfo from './UserInfo';
 import UserLogoutButton from './UserLogoutButton';
@@ -10,7 +10,7 @@ const UserMenu = () => {
 	const navigate = useNavigate();
 
 	return (
-		<div className='flex gap-2'>
+		<div className='flex gap-2 text-white'>
 			<div className='relative group'>
 				<div className='flex items-center gap-2'>
 					<ProfilePic name={user.name} />

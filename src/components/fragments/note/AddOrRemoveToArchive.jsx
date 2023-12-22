@@ -4,8 +4,14 @@ import {
 	MdOutlineUnarchive,
 } from 'react-icons/md';
 import ButtonWithIcon from '../ButtonWithIcon';
+import { useLanguageContext } from '../../../hooks/useContext';
 
 const AddOrRemoveToArchive = ({ onClick, archived }) => {
+	const { language } = useLanguageContext();
+	const archive =
+		language === 'id' ? 'Arsipkan' : 'Archive';
+	const unarchive =
+		language === 'id' ? 'Aktifkan' : 'Unarchive';
 	return (
 		<div className='group'>
 			<ButtonWithIcon
@@ -17,7 +23,7 @@ const AddOrRemoveToArchive = ({ onClick, archived }) => {
 					)
 				}
 				anchorSelectTooltip='btn-add-or-remove-to-archive'
-				tooltip={archived ? 'UnArchive' : 'Archive'}
+				tooltip={archived ? unarchive : archive}
 				onClick={onClick}
 			/>
 		</div>

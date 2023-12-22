@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import LOGO from '../../assets/img/logo-note.png';
+import { useLanguageContext } from '../../hooks/useContext';
 
 const Logo = () => {
+	const { language } = useLanguageContext();
 	return (
 		<Link
 			to={'/'}
@@ -12,7 +14,7 @@ const Logo = () => {
 				className='w-8 h-8 md:w-16 md:h-16 object-cover'
 			/>
 			<h1 className='text-base md:text-3xl text-gradient font-bold'>
-				My Notes
+				{language === 'id' ? 'Catatan Saya' : 'My Notes'}
 			</h1>
 		</Link>
 	);

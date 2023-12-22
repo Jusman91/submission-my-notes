@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types';
 import ButtonWithIcon from '../fragments/ButtonWithIcon';
 import { RiLogoutCircleRLine } from 'react-icons/ri';
+import { useLanguageContext } from '../../hooks/useContext';
 
 const UserLogoutButton = ({ onClick }) => {
+	const { language } = useLanguageContext();
 	return (
 		<ButtonWithIcon
 			icon={<RiLogoutCircleRLine />}
 			anchorSelectTooltip='btn-logout-user'
-			tooltip='Logout'
+			tooltip={language === 'id' ? 'Keluar' : 'Logout'}
 			onClick={onClick}
 		/>
 	);

@@ -5,9 +5,11 @@ import NoContent from '../fragments/NoContent';
 import { useSearchParams } from 'react-router-dom';
 import { filteredData } from '../../utils/service/globalService';
 import useDebounce from '../../hooks/useDebounce';
+import { useLanguageContext } from '../../hooks/useContext';
 
 const NoteList = ({ text, notes }) => {
 	const [searchParams] = useSearchParams();
+	const { language } = useLanguageContext();
 	const query = searchParams.get('keyword') || '';
 	const debounceQuery = useDebounce(query, 500);
 	const filterNotes = filteredData(notes, debounceQuery);
@@ -22,7 +24,13 @@ const NoteList = ({ text, notes }) => {
 					))}
 				</div>
 			) : (
-				<NoContent text='Catatan kosong' />
+				<NoContent
+					text={
+						language === 'id'
+							? 'Catatan kosong'
+							: 'Empty note'
+					}
+				/>
 			)}
 		</section>
 	);

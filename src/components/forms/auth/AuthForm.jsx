@@ -9,7 +9,7 @@ import {
 	getValidationSchema,
 } from '../../../validations/authFormValidation';
 import { useNavigate } from 'react-router-dom';
-import { useAuthContext } from '../../../hooks/useAuthContext';
+import { useAuthContext } from '../../../hooks/useContext';
 import { handleSubmit } from '../../../utils/service/authService';
 
 const AuthForm = ({ login }) => {
@@ -30,7 +30,7 @@ const AuthForm = ({ login }) => {
 				})
 			}>
 			{({ isSubmitting }) => (
-				<Form className='md:w-80 flex flex-col border-8 border-primary-800 shadow-form p-5 rounded-[20px]'>
+				<Form className='md:w-80 flex flex-col border-8 dark:border-bkg-2 shadow-form p-5 rounded-[20px]'>
 					<AuthFormHeader login={login} />
 					<AuthFormField login={login} />
 					<AuthFormButton

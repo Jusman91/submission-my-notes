@@ -7,24 +7,20 @@ export default {
 				poppins: ['Poppins', 'sans-serif'],
 			},
 			colors: {
-				'primary-100': '#cdd5d8',
-				'primary-200': '#9babb1',
-				'primary-300': '#6a828b',
-				'primary-400': '#385864',
-				'primary-500': '#062e3d',
-				'primary-600': '#052531',
-				'primary-700': '#041c25',
-				'primary-800': '#021218',
-				'primary-900': '#01090c',
-				'secondary-100': '#	e7feff',
-				'secondary-200': '#cffdff',
-				'secondary-300': '#b7fcff',
-				'secondary-400': '#9ffbff',
-				'secondary-500': '#87faff',
-				'secondary-600': '#6cc8cc',
-				'secondary-700': '#519699',
-				'secondary-800': '#366466',
-				'secondary-900': '#1b3233',
+				primary: {
+					1: 'hsl(var(--color-primary1) / <alpha-value>)',
+					2: 'hsl(var(--color-primary2) / <alpha-value>)',
+				},
+				secondary: {
+					1: 'hsl(var(--color-secondary1) / <alpha-value>)',
+					2: 'hsl(var(--color-secondary2) / <alpha-value>)',
+				},
+				bkg: {
+					1: 'hsl(var(--color-bkg1) / <alpha-value>)',
+					2: '#021218',
+				},
+				content:
+					'hsl(var(--color-content) / <alpha-value>)',
 			},
 			backgroundImage: {
 				'gradient-radial':
@@ -38,8 +34,7 @@ export default {
 				],
 			},
 			boxShadow: {
-				wrapper:
-					'0px 2px 10px 3px rgba(135, 250, 255, 1) inset',
+				wrapper: '0px 2px 10px 3px hsl(183,100%,76%) inset',
 				form: '-5px -5px 15px rgba(255, 255, 255, 0.1),	5px 5px 15px rgba(0, 0, 0, 0.35),	inset -5px -5px 15px rgba(255, 255, 255, 0.1), inset 5px 5px 15px rgba(0, 0, 0, 0.5)',
 				elements:
 					'-5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35)',
@@ -51,5 +46,5 @@ export default {
 		},
 	},
 	plugins: [],
-	darkMode: 'class',
+	darkMode: ['class', '[data-theme="dark"]'],
 };

@@ -13,9 +13,11 @@ const ButtonWithIcon = ({
 		<div className='group'>
 			<Button
 				id={anchorSelectTooltip}
-				className='rounded-full w-8 h-8 shadow-wrapper group-hover:animate-bounce'
+				className='rounded-full w-8 h-8 dark:shadow-wrapper group-hover:animate-bounce'
 				onClick={onClick}>
-				<Icon className='text-base md:text-lg'>{icon}</Icon>
+				<Icon className='text-base md:text-lg text-white'>
+					{icon}
+				</Icon>
 				{tooltip && (
 					<Tooltip
 						style={{

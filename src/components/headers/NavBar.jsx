@@ -3,7 +3,7 @@ import ListsNav from './ListsNav';
 
 const NavBar = () => {
 	return (
-		<header className='flex items-center justify-between p-2 shadow-header'>
+		<header className='flex items-center justify-between p-2 shadow-md dark:shadow-header'>
 			<Logo />
 			<ListsNav />
 		</header>

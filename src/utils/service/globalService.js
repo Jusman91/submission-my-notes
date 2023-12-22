@@ -21,7 +21,9 @@ export function filteredData(data, query) {
 	return filterData;
 }
 
-export function formateDate(date) {
+export function formateDate(date, language) {
+	const languageCode =
+		language === 'id' ? 'id-ID' : 'en-US';
 	const options = {
 		weekday: 'long',
 		day: 'numeric',
@@ -30,7 +32,7 @@ export function formateDate(date) {
 	};
 
 	return new Date(date).toLocaleDateString(
-		'id-ID',
+		languageCode,
 		options,
 	);
 }

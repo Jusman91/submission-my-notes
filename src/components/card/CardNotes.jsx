@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { formateDate } from '../../utils/service/globalService';
+import { useLanguageContext } from '../../hooks/useContext';
 
 const CardNotes = ({ data }) => {
+	const { language } = useLanguageContext();
 	const { title, body, id } = data ?? {};
-	const createdAt = formateDate(data?.createdAt);
+	const createdAt = formateDate(data?.createdAt, language);
 
 	return (
 		<Link
 			to={`/notes/${id}`}
-			className='bg-primary-800 p-4 rounded-xl hover:bg-gradient-radial shadow-wrapper'>
+			className='p-4 rounded-xl bg-bkg-2 text-white hover:bg-gradient-radial shadow-slate-900 shadow-md dark:shadow-wrapper'>
 			<h3 className='text-base md:text-xl font-semibold'>
 				{title}
 			</h3>

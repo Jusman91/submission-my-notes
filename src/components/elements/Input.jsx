@@ -9,7 +9,7 @@ const Input = ({ className, validation, ...props }) => {
 			variants: {
 				validation: {
 					default:
-						'border-primary-500 focus:border-secondary-700',
+						'border-primary-2 focus:border-secondary-2',
 					success:
 						'border-green-700 valid:text-green-500 valid:border-green-700 focus:border-green-700 focus:text-green-500',
 					error:

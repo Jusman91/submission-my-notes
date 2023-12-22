@@ -41,7 +41,7 @@ const AuthFieldFragment = ({
 					errors,
 					name,
 				})}
-				className='absolute left-10 -top-3 px-2 pointer-events-none font-light tracking-tighter peer-placeholder-shown:top-3 transition-[top,transform] duration-300 peer-focus:-top-3 peer-focus:border peer-focus:bg-primary-900 peer-focus:rounded-[10px] peer-focus:tracking-widest peer-focus:scale-75 peer-valid:-top-3 peer-valid:border peer-valid:bg-primary-900 peer-valid:rounded-[10px] peer-valid:tracking-widest peer-valid:scale-75'>
+				className='absolute left-10 -top-3 px-2 pointer-events-none font-light tracking-tighter peer-placeholder-shown:top-3 transition-[top,transform] duration-300 peer-focus:-top-3 peer-focus:border peer-focus:bg-bkg-1 peer-focus:rounded-[10px] peer-focus:tracking-widest peer-focus:scale-75 peer-valid:-top-3 peer-valid:border peer-valid:bg-bkg-1 peer-valid:rounded-[10px] peer-valid:tracking-widest peer-valid:scale-75'>
 				{label}
 			</Label>
 			<Icon
@@ -50,7 +50,7 @@ const AuthFieldFragment = ({
 					errors,
 					name,
 				})}
-				className='absolute left-3 top-[10px] py-[2px] pr-2 pl-0 text-xl border-r border-r-secondary-700'>
+				className='absolute left-3 top-[10px] py-[2px] pr-2 pl-0 text-xl border-r border-r-secondary-2'>
 				{icon}
 			</Icon>
 			{touched[name] && errors[name] ? (

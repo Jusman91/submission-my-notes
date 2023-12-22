@@ -1,12 +1,14 @@
-import { CiSearch } from 'react-icons/ci';
+import { MdSearch } from 'react-icons/md';
 import Input from '../../elements/Input';
 import { useSearchParams } from 'react-router-dom';
 import ButtonWithIcon from '../ButtonWithIcon';
 import { useToggle } from '../../../hooks/useToggle';
+import { useLanguageContext } from '../../../hooks/useContext';
 
 const SearchInput = () => {
 	const [activeClass, setActiveClass] = useToggle(false);
 	const [searchParams, setSearchParams] = useSearchParams();
+	const { language } = useLanguageContext();
 
 	const query = searchParams.get('keyword') || '';
 
@@ -25,9 +27,9 @@ const SearchInput = () => {
 				value={query}
 			/>
 			<ButtonWithIcon
-				icon={<CiSearch />}
+				icon={<MdSearch />}
 				anchorSelectTooltip='i-search'
-				tooltip='Search'
+				tooltip={language === 'id' ? 'Cari' : 'Search'}
 				onClick={setActiveClass}
 			/>
 		</div>

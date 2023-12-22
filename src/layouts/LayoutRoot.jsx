@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import NavBar from '../components/headers/NavBar';
 import Footer from '../components/footer/Footer';
-import { useAuthContext } from '../hooks/useAuthContext';
+import { useAuthContext } from '../hooks/useContext';
 
 const LayoutRoot = () => {
 	const { user } = useAuthContext();

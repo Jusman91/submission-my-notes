@@ -4,15 +4,21 @@ import Routes from '../routes';
 import AuthContextProvider from '../contexts/AuthContext';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-quill/dist/quill.snow.css';
+import ThemeContextProvider from '../contexts/ThemeContext';
+import LanguageContextProvider from '../contexts/LanguageContext';
 
 function App() {
 	return (
-		<AuthContextProvider>
-			<BrowserRouter>
-				<ToastContainer />
-				<Routes />
-			</BrowserRouter>
-		</AuthContextProvider>
+		<ThemeContextProvider>
+			<LanguageContextProvider>
+				<AuthContextProvider>
+					<BrowserRouter>
+						<ToastContainer />
+						<Routes />
+					</BrowserRouter>
+				</AuthContextProvider>
+			</LanguageContextProvider>
+		</ThemeContextProvider>
 	);
 }
 
