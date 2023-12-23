@@ -27,13 +27,17 @@ export function putUser(user) {
 	return localStorage.setItem('user', JSON.stringify(user));
 }
 
-export async function register(params, navigate) {
+export async function register(params, dispatch, navigate) {
 	try {
 		const { data } = await API.post('register', params);
 		toast.success(`${data.message} Please Login Now`);
 		navigate('/auth/login');
 	} catch (error) {
 		toast.error(error.response.data.message);
+		dispatch({
+			type: REJECTED_USER,
+			payload: error.response.data.message,
+		});
 	}
 }
 
@@ -47,7 +51,7 @@ export async function getToken({ email, password }) {
 		putAccessToken(accessToken);
 		toast.success(data.message);
 	} catch (error) {
-		toast.error(error.response.data.message);
+		console.error(error);
 		throw error;
 	}
 }
@@ -66,11 +70,11 @@ export async function getLoggedUser({
 		dispatch({ type: FULFILLED_USER });
 		navigate('/');
 	} catch (error) {
+		toast.error(error.response.data.message);
 		dispatch({
 			type: REJECTED_USER,
 			payload: error.response.data.message,
 		});
-		throw error;
 	}
 }
 
@@ -94,6 +98,7 @@ export const handleSubmit = ({
 				email: values.email,
 				password: values.password,
 			},
+			dispatch,
 			navigate,
 		);
 	}

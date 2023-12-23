@@ -11,7 +11,7 @@ const LayoutRoot = () => {
 	return (
 		<>
 			<NavBar />
-			<main className='container max-w-[1440px] w-[90%] min-h-screen mx-auto py-8'>
+			<main className='container max-w-[1440px] w-[90%] min-h-[calc(100vh-132px)] mx-auto py-8'>
 				<Outlet />
 			</main>
 			<Footer />

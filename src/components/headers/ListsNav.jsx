@@ -14,7 +14,7 @@ const ListsNav = () => {
 	const data =
 		language === 'id' ? dataListNavIn : dataListNavEn;
 	return (
-		<div className='flex items-center gap-2'>
+		<ul className='flex items-center justify-center gap-2'>
 			{data.map((list, idx) => (
 				<NavLink to={list.path} end key={idx}>
 					{({ isActive }) => (
@@ -23,10 +23,10 @@ const ListsNav = () => {
 							className={`flex items-center gap-1 dark:bg-gradient-radial p-1 rounded-xl hover:animate-pulse ${
 								isActive ? 'dark:shadow-wrapper' : ''
 							}`}>
-							<Icon className='text-sm md:text-lg text-content'>
+							<Icon className='text-xs md:text-lg text-content'>
 								{list.icon}
 							</Icon>
-							<h4 className='text-sm md:text-base text-content font-semibold'>
+							<h4 className='text-[10px] md:text-base text-content font-semibold'>
 								{list.label}
 							</h4>
 						</div>
@@ -36,7 +36,7 @@ const ListsNav = () => {
 			<LanguageButton />
 			<ThemeButton />
 			<UserMenu />
-		</div>
+		</ul>
 	);
 };
 

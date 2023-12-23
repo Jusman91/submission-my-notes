@@ -26,7 +26,7 @@ const DetailsNote = () => {
 	const { language } = useLanguageContext();
 
 	if (error) {
-		return <NotFound404 />;
+		return <NotFound404 error={error} />;
 	}
 
 	return (

@@ -1,4 +1,5 @@
 import {
+	CLEAR_ERROR,
 	FULFILLED_USER,
 	PENDING_USER,
 	REJECTED_USER,
@@ -22,6 +23,11 @@ export const AuthReducer = (state, action) => {
 				...state,
 				loading: false,
 				error: action.payload,
+			};
+		case CLEAR_ERROR:
+			return {
+				...state,
+				error: null,
 			};
 		default:
 			return state;

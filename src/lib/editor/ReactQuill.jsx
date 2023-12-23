@@ -11,7 +11,6 @@ const Quill = ({ setBody, value }) => {
 	};
 	return (
 		<ReactQuill
-			className='h-[50vh] mt-2'
 			theme='snow'
 			modules={modules}
 			onChange={handleChange}

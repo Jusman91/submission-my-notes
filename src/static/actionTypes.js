@@ -1,3 +1,4 @@
 export const PENDING_USER = 'PENDING_USER';
 export const FULFILLED_USER = 'FULFILLED_USER';
 export const REJECTED_USER = 'REJECTED_USER';
+export const CLEAR_ERROR = 'CLEAR_ERROR';

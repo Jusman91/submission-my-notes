@@ -2,6 +2,7 @@ import { createContext, useMemo, useReducer } from 'react';
 import { AuthReducer } from './reducer/authReducer';
 import PropTypes from 'prop-types';
 import { getUser } from '../utils/service/authService';
+import { CLEAR_ERROR } from '../static/actionTypes';
 
 const INITIAL_STATE = {
 	loading: false,
@@ -16,12 +17,17 @@ const AuthContextProvider = ({ children }) => {
 		INITIAL_STATE,
 	);
 
+	const clearError = () => {
+		dispatch({ type: CLEAR_ERROR });
+	};
+
 	const value = useMemo(() => {
 		return {
 			user: getUser(),
 			loading: state.loading,
 			error: state.error,
 			dispatch,
+			clearError,
 		};
 	}, [state.error, state.loading]);
 

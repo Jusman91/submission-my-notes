@@ -9,15 +9,16 @@ const LanguageButton = () => {
 	return (
 		<Button
 			id='btn-language'
-			className='p-0 bg-transparent hover:bg-transparent rounded-none'
+			className='p-0 w-6 h-6 md:w-8 md:h-8 bg-transparent hover:bg-transparent rounded-none'
 			onClick={toggleLanguage}>
 			<img
+				className='w-full h-full object-cover'
 				src={
 					language === 'id'
 						? ID_LANGUAGE_IMG
 						: EN_LANGUAGE_IMG
 				}
-				alt=''
+				alt='Language switching'
 			/>
 			<Tooltip
 				style={{

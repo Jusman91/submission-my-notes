@@ -35,12 +35,15 @@
 	border: none !important;
 }
 .ql-toolbar.ql-snow {
+	margin-top: 8px;
 	border: 1px solid #062e3c !important;
 	border-bottom: none !important;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
 .ql-editor {
+	height: 300px;
+	min-height: 300px;
 	border: 1px solid #062e3c;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;

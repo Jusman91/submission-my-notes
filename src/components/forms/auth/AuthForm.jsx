@@ -11,6 +11,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../../hooks/useContext';
 import { handleSubmit } from '../../../utils/service/authService';
+import AuthErrorMessage from './AuthErrorMessage';
 
 const AuthForm = ({ login }) => {
 	const navigate = useNavigate();
@@ -31,6 +32,7 @@ const AuthForm = ({ login }) => {
 			}>
 			{({ isSubmitting }) => (
 				<Form className='md:w-80 flex flex-col border-8 dark:border-bkg-2 shadow-form p-5 rounded-[20px]'>
+					<AuthErrorMessage />
 					<AuthFormHeader login={login} />
 					<AuthFormField login={login} />
 					<AuthFormButton
