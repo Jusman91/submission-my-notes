@@ -1,15 +1,20 @@
 import PropTypes from 'prop-types';
 import { Button, Loading } from '../../elements';
+import { useAuthContext } from '../../../hooks/useContext';
 
 const AuthFormButton = ({ login, isSubmitting }) => {
+	const { loading } = useAuthContext();
 	return (
 		<Button
-			disabled={isSubmitting}
+			disabled={loading || isSubmitting}
 			className='rounded-3xl'
 			type='submit'>
-			{isSubmitting ? (
+			{loading || isSubmitting ? (
 				<>
-					<Loading loading={isSubmitting} size={20} />
+					<Loading
+						loading={loading || isSubmitting}
+						size={20}
+					/>
 					Loading...
 				</>
 			) : login ? (

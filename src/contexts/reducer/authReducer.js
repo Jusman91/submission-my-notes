@@ -11,11 +11,13 @@ export const AuthReducer = (state, action) => {
 			return {
 				...state,
 				loading: true,
+				error: null,
 			};
 		case FULFILLED_USER: {
 			return {
 				...state,
 				loading: false,
+				error: null,
 			};
 		}
 		case REJECTED_USER:

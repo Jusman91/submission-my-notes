@@ -31,9 +31,11 @@ export async function register(params, dispatch, navigate) {
 	try {
 		const { data } = await API.post('register', params);
 		toast.success(`${data.message} Please Login Now`);
+		dispatch({ type: FULFILLED_USER });
 		navigate('/auth/login');
 	} catch (error) {
 		toast.error(error.response.data.message);
+		console.log(error);
 		dispatch({
 			type: REJECTED_USER,
 			payload: error.response.data.message,
@@ -47,7 +49,7 @@ export async function getToken({ email, password }) {
 			email,
 			password,
 		});
-		const accessToken = data.data.accessToken;
+		const accessToken = data?.data?.accessToken;
 		putAccessToken(accessToken);
 		toast.success(data.message);
 	} catch (error) {
@@ -65,7 +67,7 @@ export async function getLoggedUser({
 	try {
 		await getToken(credentials);
 		const { data } = await API.get('users/me');
-		const user = data.data;
+		const user = data?.data;
 		putUser(user);
 		dispatch({ type: FULFILLED_USER });
 		navigate('/');
