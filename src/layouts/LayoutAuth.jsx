@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import BG_AUTH from '../assets/img/bg-auth.jpg';
 
 const LayoutAuth = () => {
+	localStorage.clear();
 	return (
 		<section className='grid lg:grid-cols-2 place-items-center min-h-screen'>
 			<Outlet />

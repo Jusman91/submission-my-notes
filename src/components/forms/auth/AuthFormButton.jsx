@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
 import { Button, Loading } from '../../elements';
-import { useAuthContext } from '../../../hooks/useContext';
+import {
+	useAuthContext,
+	useLanguageContext,
+} from '../../../hooks/useContext';
 
 const AuthFormButton = ({ login, isSubmitting }) => {
 	const { loading } = useAuthContext();
+	const { language } = useLanguageContext();
 	return (
 		<Button
 			disabled={loading || isSubmitting}
@@ -18,7 +22,13 @@ const AuthFormButton = ({ login, isSubmitting }) => {
 					Loading...
 				</>
 			) : login ? (
-				'Login'
+				language === 'id' ? (
+					'Gabung'
+				) : (
+					'Login'
+				)
+			) : language === 'id' ? (
+				'Daftar'
 			) : (
 				'Register'
 			)}
